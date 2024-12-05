@@ -1,0 +1,87 @@
+{
+  "name": "@ax-llm/ax-monorepo",
+  "type": "module",
+  "description": "Monorepo for the best library to work with LLMs - Ax",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ax-llm/ax.git"
+  },
+  "license": "Apache-2.0",
+  "keywords": [],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "fix": "run-s fix:*",
+    "fix:prettier": "prettier --config .prettierrc 'src/**/*.ts' --write",
+    "fix:lint": "eslint src --ext .ts --fix",
+    "test": "run-s test:*",
+    "test:lint": "eslint src --ext .ts",
+    "test:prettier": "prettier \"src/**/*.ts\" --config .prettierrc --check",
+    "test:spelling": "cspell --quiet \"{README.md,.github/*.md,src/**/*.ts}\"",
+    "test:unit": "npm run test:unit --workspaces --if-present",
+    "cov": "run-s build test:unit cov:html cov:lcov && open coverage/index.html",
+    "doc": "run-s doc:api doc:html",
+    "doc:api": "typedoc src/ax --tsconfig src/ax/tsconfig.build.module.json",
+    "doc:html": "npm run build-doc --workspace=@ax-llm/ax-docs",
+    "version": "standard-version",
+    "prepare": "npm run test",
+    "release": "npm run release --workspaces --if-present && release-it --no-increment",
+    "publish": "npm run publish --workspaces  --if-present -- --provenance --access public",
+    "git-cz": "npx git-cz",
+    "tsx": "node --env-file=.env --import=tsx",
+    "dependencies:rebuild": "rm -rf package-lock.json && rm -rf node_modules && rm -rf */*/node_modules && npm i --no-audit --no-fund"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@istanbuljs/nyc-config-typescript": "^1.0.2",
+    "@release-it/bumper": "^6.0.1",
+    "@release-it/conventional-changelog": "^8.0.1",
+    "@total-typescript/tsconfig": "^1.0.4",
+    "@types/node": "^20.11.30",
+    "@types/readable-stream": "^4.0.11",
+    "@types/stream-array": "^1.1.4",
+    "@types/uuid": "^9.0.8",
+    "@types/yargs": "^17.0.32",
+    "@typescript-eslint/eslint-plugin": "^7.14.1",
+    "@typescript-eslint/parser": "^7.14.1",
+    "cspell": "^8.6.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-functional": "^6.1.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-monorepo-cop": "^1.0.2",
+    "eslint-plugin-require-extensions": "^0.1.3",
+    "fs-extra": "^11.2.0",
+    "gh-pages": "^6.1.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.2.5",
+    "release-it": "^17.4.0",
+    "standard-version": "^9.5.0",
+    "tsx": "^4.7.1",
+    "typedoc": "^0.26.3",
+    "typedoc-plugin-frontmatter": "^1.0.0",
+    "typedoc-plugin-markdown": "^4.1.1",
+    "typescript": "^5.5.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "bugs": {
+    "url": "https://github.com/@ax-llm/ax/issues"
+  },
+  "homepage": "https://github.com/@ax-llm/ax#readme",
+  "directories": {
+    "example": "examples"
+  },
+  "workspaces": [
+    "src/*"
+  ],
+  "author": "Vikram <https://twitter.com/dosco>",
+  "private": "true",
+  "version": "10.0.12"
+}
