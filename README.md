@@ -3,9 +3,7 @@
 Use Ax and get a streaming, multi-modal DSPy framework with agents and typed signatures. Works with all LLMs. Ax is always streaming and handles output type validation while streaming for faster responses and lower token usage.
 
 
-[![NPM Package](https://img.shields.io/npm/v/@ax-llm/ax?style=for-the-badge&color=green)](https://www.npmjs.com/package/@ax-llm/ax)
-[![Discord Chat](https://dcbadge.vercel.app/api/server/DSHg3dU7dW?style=for-the-badge)](https://discord.gg/DSHg3dU7dW)
-[![Twitter](https://img.shields.io/twitter/follow/dosco?style=for-the-badge&color=red)](https://twitter.com/dosco)
+[![Twitter](https://img.shields.io/twitter/follow/AxFramework?style=for-the-badge&color=red)](https://twitter.com/AxFramework)
 
 ![image](https://github.com/ax-llm/ax/assets/832235/3a250031-591c-42e0-b4fc-06afb8c351c4)
 
@@ -13,7 +11,7 @@ Use Ax and get a streaming, multi-modal DSPy framework with agents and typed sig
 
 While we're focused on building agents, Ax has all the tools needed to quickly build powerful and production ready workflows with LLMs
 
-![image](https://github.com/ax-llm/ax/assets/832235/801b8110-4cba-4c50-8ec7-4d5859121fe5)
+![image](https://github.com/AxFramework/ax/assets/832235/801b8110-4cba-4c50-8ec7-4d5859121fe5)
 
 ## Why use Ax?
 
@@ -32,7 +30,6 @@ While we're focused on building agents, Ax has all the tools needed to quickly b
 
 ## What's a prompt signature?
 
-<img width="860" alt="shapes at 24-03-31 00 05 55" src="https://github.com/dosco/llm-client/assets/832235/0f0306ea-1812-4a0a-9ed5-76cd908cd26b">
 
 Efficient type-safe prompts are auto-generated from a simple signature. A prompt signature is made up of a `"task description" inputField:type "field description" -> "outputField:type`. The idea behind prompt signatures is based on work done in the "Demonstrate-Search-Predict" paper.
 
@@ -77,15 +74,15 @@ You can have multiple input and output fields, and each field can be of the type
 ## Install
 
 ```bash
-npm install @ax-llm/ax
+npm install @esstringbean/ax
 # or
-yarn add @ax-llm/ax
+yarn add @esstringbean/ax
 ```
 
 ## Example: Using chain-of-thought to summarize text
 
 ```typescript
-import { AxAI, AxChainOfThought } from '@ax-llm/ax';
+import { AxAI, AxChainOfThought } from '@esstringbean/ax';
 
 const textToSummarize = `
 The technological singularity—or simply the singularity[1]—is a hypothetical future point in time at which technological growth becomes uncontrollable and irreversible, resulting in unforeseeable changes to human civilization.[2][3] ...`;
@@ -620,8 +617,8 @@ ai.setOptions({ debug: true });
 
 ## Reach out
 
-We're happy to help reach out if you have questions or join the Discord
-[twitter/dosco](https://twitter.com/dosco)
+We're happy to help reach out if you have questions
+[twitter/AxFramework](https://twitter.com/AxFramework)
 
 ## FAQ
 
